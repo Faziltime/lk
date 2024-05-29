@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year/Month Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="icons">
+        <img src="./images/home.png" alt="Home" id="homeButton" class="icon">
+        <img src="./images/mail.png" alt="Mail" id="mailButton" class="icon">
+        <img src="./images/about.png" alt="About" id="aboutButton" class="icon">
+    </div>
+    <div class="container">
+        <h1>Select Year and Month</h1>
+        <select id="yearPicker"></select>
+        <select id="monthPicker"></select>
+        <br>
+        <button onclick="showEvent()">Go</button>
+        <div id="eventInfo" class="event-info"></div>
+        <img id="eventImage" class="event-image" src="" alt="Event Image" style="display: none;">
+    </div>
+
+    <div id="mailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="mailForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("Rh-R2wObJ2ZRqwkXR"); // Replace with your EmailJS user ID
+        })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
